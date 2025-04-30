@@ -1,9 +1,6 @@
-bool menu_open = false; // toggle flag, if not already global
+bool menu_open = true; // global
 
 void RenderMenu() {
-    static bool menu_open = false;
-
-    // Toggle with Insert
     if (GetAsyncKeyState(VK_INSERT) & 1)
         menu_open = !menu_open;
 
@@ -15,7 +12,7 @@ void RenderMenu() {
     ImGui::NewFrame();
 
     ImGui::Begin("HVH Menu", &menu_open, ImGuiWindowFlags_AlwaysAutoResize);
-    render_hvh_tab(); // your HVH tab from menu.cpp
+    render_hvh_tab(menu.cpp); // your HVH tab from menu.cpp
     ImGui::End();
 
     ImGui::Render();
