@@ -1,0 +1,1080 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Beta|Win32">
+      <Configuration>Beta</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Developer|Win32">
+      <Configuration>Developer</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Stable|Win32">
+      <Configuration>Stable</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{A437D8C7-EFDA-444A-B941-5CEFCD40C2F6}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CounterStrikeGlobalOffensive</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>naphack</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Developer|Win32'" Label="Configuration">
+    <PlatformToolset>v143</PlatformToolset>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Beta|Win32'" Label="Configuration">
+    <PlatformToolset>v143</PlatformToolset>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Stable|Win32'" Label="Configuration">
+    <PlatformToolset>v143</PlatformToolset>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Developer|Win32'">
+    <IncludePath>$(ProjectDir)Libraries;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;D:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(ProjectDir)Libraries\stb;D:\Lol\Microsoft-DirectX-SDK-June-2010--master\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)Libraries;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(NETFXKitsDir)Lib\um\x86;D:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;D:\Lol\Microsoft-DirectX-SDK-June-2010--master\Lib\x86;$(LibraryPath)</LibraryPath>
+    <TargetExt>.dll</TargetExt>
+    <IntDir>$(SolutionDir)$(Configuration)\Intermediate\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Beta|Win32'">
+    <IncludePath>$(ProjectDir)Libraries;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(ProjectDir)Libraries\Freetype\include;D:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(ProjectDir)Libraries\stb;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)Libraries;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(ProjectDir)Libraries\cryptopp\Win32\Output\Release;$(ProjectDir)Libraries\Freetype;$(NETFXKitsDir)Lib\um\x86;D:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+    <TargetExt>.dll</TargetExt>
+    <IntDir>$(SolutionDir)$(Configuration)\Intermediate\</IntDir>
+    <GenerateManifest>false</GenerateManifest>
+    <TargetName>$(ProjectName)_beta</TargetName>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Stable|Win32'">
+    <IncludePath>$(ProjectDir)Libraries;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(ProjectDir)Libraries\Freetype\include;D:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(ProjectDir)Libraries\stb;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)Libraries;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(ProjectDir)Libraries\cryptopp\Win32\Output\Release;$(ProjectDir)Libraries\Freetype;$(NETFXKitsDir)Lib\um\x86;D:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+    <TargetExt>.dll</TargetExt>
+    <IntDir>$(SolutionDir)$(Configuration)\Intermediate\</IntDir>
+    <GenerateManifest>false</GenerateManifest>
+    <TargetName>$(ProjectName)</TargetName>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Developer|Win32'">
+    <VcpkgConfiguration>Release</VcpkgConfiguration>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Beta|Win32'">
+    <VcpkgConfiguration>
+    </VcpkgConfiguration>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Stable|Win32'">
+    <VcpkgConfiguration>Release</VcpkgConfiguration>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Developer|Win32'">
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PreprocessorDefinitions>LUA_SCRIPTING;DEV;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SDLCheck>true</SDLCheck>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <ControlFlowGuard>false</ControlFlowGuard>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <FloatingPointExceptions>true</FloatingPointExceptions>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <AdditionalOptions>/Zc:threadSafeInit- /FS %(AdditionalOptions)</AdditionalOptions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RemoveUnreferencedCodeData>false</RemoveUnreferencedCodeData>
+    </ClCompile>
+    <Link>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <MapExports>false</MapExports>
+      <AssemblyDebug>false</AssemblyDebug>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Beta|Win32'">
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PreprocessorDefinitions>JSON_NOEXCEPTION;CLOUD_SCRIPTING;LUA_SCRIPTING;USE_XOR;BETA_MODE;NDEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)LUA_SCRIPTING;USE_XOR;BETA_MODE;NDEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <StringPooling>
+      </StringPooling>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <ControlFlowGuard>false</ControlFlowGuard>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <SDLCheck>true</SDLCheck>
+      <CompileAs>Default</CompileAs>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <AdditionalOptions>/Zc:threadSafeInit- %(AdditionalOptions)</AdditionalOptions>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RemoveUnreferencedCodeData>false</RemoveUnreferencedCodeData>
+    </ClCompile>
+    <Link>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <MapExports>false</MapExports>
+      <AssemblyDebug>false</AssemblyDebug>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Stable|Win32'">
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PreprocessorDefinitions>JSON_NOEXCEPTION;CLOUD_SCRIPTING;LUA_SCRIPTING;USE_XOR;NDEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <StringPooling>
+      </StringPooling>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <ControlFlowGuard>false</ControlFlowGuard>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <SDLCheck>true</SDLCheck>
+      <CompileAs>Default</CompileAs>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <AdditionalOptions>/Zc:threadSafeInit- %(AdditionalOptions)</AdditionalOptions>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RemoveUnreferencedCodeData>false</RemoveUnreferencedCodeData>
+    </ClCompile>
+    <Link>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <MapExports>false</MapExports>
+      <AssemblyDebug>false</AssemblyDebug>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Features\Miscellaneous\AutomaticPurchase.cpp" />
+    <ClCompile Include="Features\Miscellaneous\Communication.cpp" />
+    <ClCompile Include="Features\Miscellaneous\GameMovement.cpp" />
+    <ClCompile Include="Features\Miscellaneous\GrenadeWarning.cpp" />
+    <ClCompile Include="Features\Miscellaneous\PlayerList.cpp" />
+    <ClCompile Include="Features\Rage\Animations.cpp" />
+    <ClCompile Include="Features\Rage\BoneSetup.cpp" />
+    <ClCompile Include="Features\Miscellaneous\Miscellaneous.cpp" />
+    <ClCompile Include="Features\Miscellaneous\Movement.cpp" />
+    <ClCompile Include="Features\Rage\AntiAim.cpp" />
+    <ClCompile Include="Features\Rage\Autowall.cpp" />
+    <ClCompile Include="Features\Rage\DormantAimbot.cpp" />
+    <ClCompile Include="Features\Rage\FakeLag.cpp" />
+    <ClCompile Include="Features\Rage\FakePing.cpp" />
+    <ClCompile Include="Features\Rage\Knifebot.cpp" />
+    <ClCompile Include="Features\Rage\ServerAnimations.cpp" />
+    <ClCompile Include="Features\Rage\ShotHandling.cpp" />
+    <ClCompile Include="Features\Scripting\Scripting.cpp" />
+    <ClCompile Include="Features\Visuals\BulletTracer.cpp" />
+    <ClCompile Include="Features\Visuals\GSInterpreter.cpp" />
+    <ClCompile Include="Features\Visuals\Glow.cpp" />
+    <ClCompile Include="Features\Visuals\Hitmarker.cpp" />
+    <ClCompile Include="Features\Visuals\Models.cpp" />
+    <ClCompile Include="Features\Visuals\Visuals.cpp" />
+    <ClCompile Include="Features\Visuals\WeatherController.cpp" />
+    <ClCompile Include="Hooking\Hooks\AddBoxOverlay.cpp" />
+    <ClCompile Include="Hooking\Hooks\BeginFrame.cpp" />
+    <ClCompile Include="Hooking\Hooks\BuildTransformations.cpp" />
+    <ClCompile Include="Hooking\Hooks\CalcRenderableWorldSpaceAABB_Bloated.cpp" />
+    <ClCompile Include="Hooking\Hooks\CalcViewBob.cpp" />
+    <ClCompile Include="Hooking\Hooks\DoProceduralFootPlant.cpp" />
+    <ClCompile Include="Hooking\Hooks\DrawSetColor.cpp" />
+    <ClCompile Include="Hooking\Hooks\FireEvents.cpp" />
+    <ClCompile Include="Hooking\Hooks\FrameStageNotify.cpp" />
+    <ClCompile Include="Hooking\Hooks\GameTrace.cpp" />
+    <ClCompile Include="Hooking\Hooks\GetItemName.cpp" />
+    <ClCompile Include="Hooking\Hooks\IsHltv.cpp" />
+    <ClCompile Include="Hooking\Hooks\IsPaused.cpp" />
+    <ClCompile Include="Hooking\Hooks\IsRenderableInPVS.cpp" />
+    <ClCompile Include="Hooking\Hooks\ModifyEyePosition.cpp" />
+    <ClCompile Include="Hooking\Hooks\OnDataChanged.cpp" />
+    <ClCompile Include="Hooking\Hooks\OverrideConfig.cpp" />
+    <ClCompile Include="Hooking\Hooks\PerformScreenOverlay.cpp" />
+    <ClCompile Include="Hooking\Hooks\PhysicsSimulate.cpp" />
+    <ClCompile Include="Hooking\Hooks\PostNetworkDataReceived.cpp" />
+    <ClCompile Include="Hooking\Hooks\ProcessInterpolatedList.cpp" />
+    <ClCompile Include="Hooking\Hooks\ProcessMovement.cpp" />
+    <ClCompile Include="Hooking\Hooks\ProcessTempEntities.cpp" />
+    <ClCompile Include="Hooking\Hooks\RetrieveMessage.cpp" />
+    <ClCompile Include="Hooking\Hooks\SetupMove.cpp" />
+    <ClCompile Include="Hooking\Hooks\StandardBlendingRules.cpp" />
+    <ClCompile Include="Hooking\Hooks\UpdateClientSideAnimation.cpp" />
+    <ClCompile Include="Hooking\Hooks\VertexBufferLock.cpp" />
+    <ClCompile Include="Hooking\Hooks\WriteUsercmdDeltaToBuffer.cpp" />
+    <ClCompile Include="Libraries\BASS\dll.cpp" />
+    <ClCompile Include="Libraries\BASS\dll_image.cpp" />
+    <ClCompile Include="Loader\Exports.cpp" />
+    <ClCompile Include="Loader\Security\Security.cpp" />
+    <ClCompile Include="Loader\Socket\base64.cpp" />
+    <ClCompile Include="Menu\Framework\ColorPicker\ColorPicker.cpp" />
+    <ClCompile Include="Menu\Framework\Hotkey\Hotkey.cpp" />
+    <ClCompile Include="SDK\Classes\CClientState.cpp" />
+    <ClCompile Include="SDK\Classes\CCSGameRules.cpp" />
+    <ClCompile Include="SDK\Classes\GlowOutlineEffect.cpp" />
+    <ClCompile Include="SDK\Classes\IInputSystem.cpp" />
+    <ClCompile Include="SDK\Classes\IWeaponSystem.cpp" />
+    <ClCompile Include="SDK\Valve\characterset.cpp" />
+    <ClCompile Include="Utils\CrashHandler.cpp" />
+    <ClCompile Include="Hooking\Hooks\DispatchUserMessage.cpp" />
+    <ClCompile Include="Hooking\Hooks\IsBoxVisible.cpp" />
+    <ClCompile Include="Hooking\Hooks\IsConnected.cpp" />
+    <ClCompile Include="Hooking\Hooks\IsPlayingDemo.cpp" />
+    <ClCompile Include="Utils\LogSystem.cpp" />
+    <ClCompile Include="Menu\Elements.cpp" />
+    <ClCompile Include="Menu\Framework\Button\Button.cpp" />
+    <ClCompile Include="Menu\Framework\Checkbox\Checkbox.cpp" />
+    <ClCompile Include="Menu\Framework\Dropdown\Dropdown.cpp" />
+    <ClCompile Include="Menu\Framework\Form\Form.cpp" />
+    <ClCompile Include="Menu\Framework\Group\Group.cpp" />
+    <ClCompile Include="Menu\Framework\GUI.cpp" />
+    <ClCompile Include="Menu\Framework\Label\Label.cpp" />
+    <ClCompile Include="Menu\Framework\Listbox\Listbox.cpp" />
+    <ClCompile Include="Menu\Framework\MultiDropdown\MultiDropdown.cpp" />
+    <ClCompile Include="Menu\Framework\Slider\Slider.cpp" />
+    <ClCompile Include="Menu\Framework\Textbox\Textbox.cpp" />
+    <ClCompile Include="Menu\Helpers\InputHelper.cpp" />
+    <ClCompile Include="Hooking\Hooks\OnSoundStarted.cpp" />
+    <ClCompile Include="Utils\Config.cpp" />
+    <ClCompile Include="SDK\core.cpp" />
+    <ClCompile Include="SDK\Classes\CPlayerResource.cpp" />
+    <ClCompile Include="Hooking\Hooks\CreateMove.cpp" />
+    <ClCompile Include="SDK\Classes\CUserCmd.cpp" />
+    <ClCompile Include="SDK\variables.cpp" />
+    <ClCompile Include="SDK\Displacement.cpp" />
+    <ClCompile Include="Hooking\Hooks\DoPostScreenEffects.cpp" />
+    <ClCompile Include="Hooking\Hooks\DrawModel.cpp" />
+    <ClCompile Include="Hooking\Hooks\EmitSound.cpp" />
+    <ClCompile Include="SDK\Classes\entity.cpp" />
+    <ClCompile Include="Features\Visuals\EventLogger.cpp" />
+    <ClCompile Include="Features\Miscellaneous\GameEvent.cpp" />
+    <ClCompile Include="Hooking\Hooks\GetScreenAspectRatio.cpp" />
+    <ClCompile Include="SDK\Classes\IBaseClientDll.cpp" />
+    <ClCompile Include="SDK\Classes\IClientEntityList.cpp" />
+    <ClCompile Include="SDK\Classes\IConVar.cpp" />
+    <ClCompile Include="SDK\Classes\IEngineTrace.cpp" />
+    <ClCompile Include="SDK\Classes\IGameMovement.cpp" />
+    <ClCompile Include="SDK\Classes\IInput.cpp" />
+    <ClCompile Include="SDK\Classes\IMemAlloc.cpp" />
+    <ClCompile Include="SDK\Classes\IMoveHelper.cpp" />
+    <ClCompile Include="Utils\InputSys.cpp" />
+    <ClCompile Include="Hooking\Hooks\InterpolateServerEntities.cpp" />
+    <ClCompile Include="SDK\Classes\IPanel.cpp" />
+    <ClCompile Include="SDK\Classes\IPrediction.cpp" />
+    <ClCompile Include="SDK\Classes\ISurface.cpp" />
+    <ClCompile Include="SDK\Classes\IVEngineClient.cpp" />
+    <ClCompile Include="Features\Miscellaneous\KitParser.cpp" />
+    <ClCompile Include="Hooking\Hooks\ListLeavesInBox.cpp" />
+    <ClCompile Include="Hooking\Hooks\LockCursor.cpp" />
+    <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="Utils\Math.cpp" />
+    <ClCompile Include="SDK\Valve\Matrix.cpp" />
+    <ClCompile Include="Libraries\minhook-master\src\buffer.c" />
+    <ClCompile Include="Libraries\minhook-master\src\hde\hde32.c" />
+    <ClCompile Include="Libraries\minhook-master\src\hde\hde64.c" />
+    <ClCompile Include="Libraries\minhook-master\src\hook.c" />
+    <ClCompile Include="Libraries\minhook-master\src\trampoline.c" />
+    <ClCompile Include="Hooking\Hooks\OverrideView.cpp" />
+    <ClCompile Include="Hooking\Hooks\PacketStart.cpp" />
+    <ClCompile Include="Hooking\Hooks\PaintTraverse.cpp" />
+    <ClCompile Include="SDK\Valve\platform.cpp" />
+    <ClCompile Include="SDK\Classes\Player.cpp" />
+    <ClCompile Include="SDK\Classes\PlayerAnimState.cpp" />
+    <ClCompile Include="Hooking\Hooks\PlayerHooks.cpp" />
+    <ClCompile Include="Features\Rage\EnginePrediction.cpp" />
+    <ClCompile Include="SDK\Classes\PropManager.cpp" />
+    <ClCompile Include="SDK\Valve\qangle.cpp" />
+    <ClCompile Include="Features\Rage\Ragebot.cpp" />
+    <ClCompile Include="Hooking\Hooks\RecvProxyHooks.cpp" />
+    <ClCompile Include="Renderer\Render.cpp" />
+    <ClCompile Include="Hooking\Hooks\RenderView.cpp" />
+    <ClCompile Include="Features\Rage\Resolver.cpp" />
+    <ClCompile Include="Hooking\Hooks\RunCommand.cpp" />
+    <ClCompile Include="SDK\Utils\PatternScan.cpp" />
+    <ClCompile Include="SDK\sdk.cpp" />
+    <ClCompile Include="Hooking\Hooks\SendNetMsg.cpp" />
+    <ClCompile Include="Features\Miscellaneous\SkinChanger.cpp" />
+    <ClCompile Include="pandora.cpp" />
+    <ClCompile Include="SDK\Utils\Print.cpp" />
+    <ClCompile Include="Features\Rage\TickbaseShift.cpp" />
+    <ClCompile Include="Utils\Threading\atomic_lock.cpp" />
+    <ClCompile Include="Utils\Threading\mutex.cpp" />
+    <ClCompile Include="Utils\Threading\packed_heap.cpp" />
+    <ClCompile Include="Utils\Threading\semaphores.cpp" />
+    <ClCompile Include="Utils\Threading\shared_mutex.cpp" />
+    <ClCompile Include="Utils\Threading\threading.cpp" />
+    <ClCompile Include="SDK\Valve\UtlBuffer.cpp" />
+    <ClCompile Include="SDK\Valve\vector.cpp" />
+    <ClCompile Include="SDK\Valve\vector2d.cpp" />
+    <ClCompile Include="SDK\Valve\vector4d.cpp" />
+    <ClCompile Include="SDK\Classes\weapon.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Features\Miscellaneous\AutomaticPurchase.hpp" />
+    <ClInclude Include="Features\Miscellaneous\Communication.hpp" />
+    <ClInclude Include="Features\Miscellaneous\GameMovement.hpp" />
+    <ClInclude Include="Features\Miscellaneous\GrenadeWarning.hpp" />
+    <ClInclude Include="Features\Miscellaneous\PlayerList.hpp" />
+    <ClInclude Include="Features\Rage\Animations.hpp" />
+    <ClInclude Include="Features\Rage\BoneSetup.hpp" />
+    <ClInclude Include="Features\Miscellaneous\Miscellaneous.hpp" />
+    <ClInclude Include="Features\Miscellaneous\Movement.hpp" />
+    <ClInclude Include="Features\Rage\AntiAim.hpp" />
+    <ClInclude Include="Features\Rage\DormantAimbot.hpp" />
+    <ClInclude Include="Features\Rage\FakeLag.hpp" />
+    <ClInclude Include="Features\Rage\FakePing.hpp" />
+    <ClInclude Include="Features\Rage\Knifebot.hpp" />
+    <ClInclude Include="Features\Rage\ServerAnimations.hpp" />
+    <ClInclude Include="Features\Rage\ShotHandling.hpp" />
+    <ClInclude Include="Features\Scripting\Scripting.hpp" />
+    <ClInclude Include="Features\Scripting\Wrappers\entity.h" />
+    <ClInclude Include="Features\Scripting\Wrappers\exploits.h" />
+    <ClInclude Include="Features\Scripting\Wrappers\interfaces.h" />
+    <ClInclude Include="Features\Scripting\Wrappers\material.h" />
+    <ClInclude Include="Features\Scripting\Wrappers\penetration.h" />
+    <ClInclude Include="Features\Scripting\Wrappers\render.h" />
+    <ClInclude Include="Features\Visuals\BulletTracer.hpp" />
+    <ClInclude Include="Features\Visuals\GSInterpreter.hpp" />
+    <ClInclude Include="Features\Visuals\Glow.hpp" />
+    <ClInclude Include="Features\Visuals\Hitmarker.hpp" />
+    <ClInclude Include="Features\Visuals\Models.hpp" />
+    <ClInclude Include="Features\Visuals\Visuals.hpp" />
+    <ClInclude Include="Features\Visuals\WeatherController.hpp" />
+    <ClInclude Include="Libraries\BASS\API.h" />
+    <ClInclude Include="Libraries\BASS\bass.h" />
+    <ClInclude Include="Libraries\BASS\dll.h" />
+    <ClInclude Include="Libraries\daum\XorFloat.hpp" />
+    <ClInclude Include="Libraries\httplib.h" />
+    <ClInclude Include="Libraries\LUA\lua\lauxlib.h" />
+    <ClInclude Include="Libraries\LUA\lua\lua.h" />
+    <ClInclude Include="Libraries\LUA\lua\lua.hpp" />
+    <ClInclude Include="Libraries\LUA\lua\luaconf.h" />
+    <ClInclude Include="Libraries\LUA\lua\luajit.h" />
+    <ClInclude Include="Libraries\LUA\lua\lualib.h" />
+    <ClInclude Include="Libraries\LUA\sol\as_args.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\as_returns.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\base_traits.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\bind_traits.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\bytecode.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\call.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\compatibility.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\compatibility\compat-5.3.c.h" />
+    <ClInclude Include="Libraries\LUA\sol\compatibility\compat-5.3.h" />
+    <ClInclude Include="Libraries\LUA\sol\compatibility\compat-5.4.h" />
+    <ClInclude Include="Libraries\LUA\sol\compatibility\lua_version.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\config.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\coroutine.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\debug.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\demangle.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\deprecate.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\dump_handler.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\ebco.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\environment.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\error.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\error_handler.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\forward.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\forward_detail.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\function.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\function_result.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\function_types.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\function_types_core.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\function_types_overloaded.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\function_types_stateful.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\function_types_stateless.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\function_types_templated.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\inheritance.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\in_place.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\load_result.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\lua_table.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\lua_value.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\make_reference.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\metatable.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\object.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\object_base.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\optional.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\optional_implementation.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\overload.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\pointer_like.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\policies.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\property.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\protect.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\protected_function.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\protected_function_result.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\protected_handler.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\proxy_base.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\raii.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\reference.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\resolve.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\sol.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack_check.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack_check_get.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack_check_get_qualified.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack_check_get_unqualified.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack_check_qualified.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack_check_unqualified.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack_core.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack_field.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack_get.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack_get_qualified.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack_get_unqualified.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack_guard.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack_iterator.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack_pop.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack_probe.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack_proxy.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack_proxy_base.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack_push.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\stack_reference.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\state.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\state_handling.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\state_view.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\string_view.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\table.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\table_core.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\table_iterator.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\table_proxy.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\thread.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\tie.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\traits.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\trampoline.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\tuple.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\types.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\unicode.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\unique_usertype_traits.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\unsafe_function.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\unsafe_function_result.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\userdata.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\usertype.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\usertype_container.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\usertype_container_launch.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\usertype_core.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\usertype_proxy.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\usertype_storage.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\usertype_traits.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\variadic_args.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\variadic_results.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\version.hpp" />
+    <ClInclude Include="Libraries\LUA\sol\wrapper.hpp" />
+    <ClInclude Include="Libraries\stb\stb_image.h" />
+    <ClInclude Include="Libraries\stb\stb_image_resize.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\3way.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\adler32.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\adv_simd.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\aes.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\aes_armv4.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\algebra.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\algparam.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\allocate.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\arc4.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\argnames.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\aria.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\arm_simd.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\asn.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\authenc.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\base32.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\base64.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\basecode.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\blake2.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\blowfish.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\blumshub.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\camellia.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\cast.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\cbcmac.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\ccm.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\chacha.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\chachapoly.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\cham.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\channels.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\cmac.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\config.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\config_align.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\config_asm.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\config_cpu.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\config_cxx.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\config_dll.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\config_int.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\config_misc.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\config_ns.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\config_os.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\config_ver.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\cpu.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\crc.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\cryptlib.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\darn.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\default.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\des.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\dh.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\dh2.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\dll.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\dmac.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\donna.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\donna_32.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\donna_64.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\donna_sse.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\drbg.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\dsa.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\eax.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\ec2n.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\eccrypto.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\ecp.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\ecpoint.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\elgamal.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\emsa2.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\eprecomp.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\esign.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\factory.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\fhmqv.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\files.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\filters.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\fips140.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\fltrimpl.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\gcm.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\gf256.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\gf2n.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\gf2_32.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\gfpcrypt.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\gost.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\gzip.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\hashfwd.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\hc128.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\hc256.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\hex.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\hight.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\hkdf.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\hmac.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\hmqv.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\hrtimer.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\ida.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\idea.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\integer.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\iterhash.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\kalyna.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\keccak.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\lea.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\lubyrack.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\luc.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\mars.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\md2.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\md4.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\md5.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\mdc.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\mersenne.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\misc.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\modarith.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\modes.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\modexppc.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\mqueue.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\mqv.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\naclite.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\nbtheory.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\nr.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\oaep.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\oids.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\osrng.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\ossig.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\padlkrng.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\panama.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\pch.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\pkcspad.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\poly1305.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\polynomi.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\ppc_simd.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\pssr.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\pubkey.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\pwdbased.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\queue.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\rabbit.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\rabin.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\randpool.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\rc2.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\rc5.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\rc6.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\rdrand.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\resource.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\rijndael.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\ripemd.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\rng.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\rsa.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\rw.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\safer.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\salsa.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\scrypt.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\seal.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\secblock.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\secblockfwd.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\seckey.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\seed.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\serpent.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\serpentp.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\sha.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\sha1_armv4.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\sha256_armv4.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\sha3.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\sha512_armv4.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\shacal2.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\shake.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\shark.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\simeck.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\simon.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\simple.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\siphash.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\skipjack.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\sm3.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\sm4.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\smartptr.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\sosemanuk.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\speck.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\square.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\stdcpp.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\strciphr.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\tea.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\threefish.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\tiger.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\trap.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\trunhash.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\ttmac.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\tweetnacl.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\twofish.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\vmac.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\wake.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\whrlpool.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\words.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\xed25519.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\xtr.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\xtrcrypt.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\xts.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\zdeflate.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\zinflate.h" />
+    <ClInclude Include="Libraries\vcpkg\cryptopp\zlib.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXBench.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXCancellationRequest.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXConnectionState.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXDNSLookup.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXExponentialBackoff.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXGetFreePort.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXGzipCodec.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXHttp.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXHttpClient.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXHttpServer.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXNetSystem.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXProgressCallback.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXSelectInterrupt.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXSelectInterruptFactory.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXSelectInterruptPipe.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXSetThreadName.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXSocket.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXSocketConnect.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXSocketFactory.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXSocketMbedTLS.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXSocketServer.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXSocketTLSOptions.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXStrCaseCompare.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXUdpSocket.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXUniquePtr.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXUrlParser.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXUserAgent.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXUtf8Validator.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXUuid.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXWebSocket.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXWebSocketCloseConstants.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXWebSocketCloseInfo.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXWebSocketErrorInfo.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXWebSocketHandshake.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXWebSocketHandshakeKeyGen.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXWebSocketHttpHeaders.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXWebSocketInitResult.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXWebSocketMessage.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXWebSocketMessageType.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXWebSocketOpenInfo.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXWebSocketPerMessageDeflate.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXWebSocketPerMessageDeflateCodec.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXWebSocketPerMessageDeflateOptions.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXWebSocketProxyServer.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXWebSocketSendInfo.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXWebSocketServer.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXWebSocketTransport.h" />
+    <ClInclude Include="Libraries\vcpkg\ixwebsocket\IXWebSocketVersion.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\aes.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\aesni.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\arc4.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\aria.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\asn1.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\asn1write.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\base64.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\bignum.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\blowfish.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\bn_mul.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\camellia.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\ccm.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\certs.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\chacha20.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\chachapoly.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\check_config.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\cipher.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\cipher_internal.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\cmac.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\compat-1.3.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\config.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\config_threading.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\ctr_drbg.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\debug.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\des.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\dhm.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\ecdh.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\ecdsa.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\ecjpake.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\ecp.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\ecp_internal.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\entropy.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\entropy_poll.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\error.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\gcm.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\havege.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\hkdf.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\hmac_drbg.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\md.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\md2.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\md4.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\md5.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\md_internal.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\memory_buffer_alloc.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\net.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\net_sockets.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\nist_kw.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\oid.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\padlock.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\pem.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\pk.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\pkcs11.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\pkcs12.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\pkcs5.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\pk_internal.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\platform.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\platform_time.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\platform_util.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\poly1305.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\psa_util.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\ripemd160.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\rsa.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\rsa_internal.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\sha1.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\sha256.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\sha512.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\ssl.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\ssl_cache.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\ssl_ciphersuites.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\ssl_cookie.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\ssl_internal.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\ssl_ticket.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\threading.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\timing.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\version.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\x509.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\x509_crl.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\x509_crt.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\x509_csr.h" />
+    <ClInclude Include="Libraries\vcpkg\mbedtls\xtea.h" />
+    <ClInclude Include="Libraries\vcpkg\psa\crypto.h" />
+    <ClInclude Include="Libraries\vcpkg\psa\crypto_accel_driver.h" />
+    <ClInclude Include="Libraries\vcpkg\psa\crypto_compat.h" />
+    <ClInclude Include="Libraries\vcpkg\psa\crypto_driver_common.h" />
+    <ClInclude Include="Libraries\vcpkg\psa\crypto_entropy_driver.h" />
+    <ClInclude Include="Libraries\vcpkg\psa\crypto_extra.h" />
+    <ClInclude Include="Libraries\vcpkg\psa\crypto_platform.h" />
+    <ClInclude Include="Libraries\vcpkg\psa\crypto_se_driver.h" />
+    <ClInclude Include="Libraries\vcpkg\psa\crypto_sizes.h" />
+    <ClInclude Include="Libraries\vcpkg\psa\crypto_struct.h" />
+    <ClInclude Include="Libraries\vcpkg\psa\crypto_types.h" />
+    <ClInclude Include="Libraries\vcpkg\psa\crypto_values.h" />
+    <ClInclude Include="Libraries\vcpkg\zconf.h" />
+    <ClInclude Include="Libraries\vcpkg\zlib.h" />
+    <ClInclude Include="Libraries\Virtualizer\C\Via ASM module\VirtualizerSDKCustomVMsMacros.h" />
+    <ClInclude Include="Libraries\Virtualizer\C\Via ASM module\VirtualizerSDKMacros.h" />
+    <ClInclude Include="Libraries\Virtualizer\C\VirtualizerSDK.h" />
+    <ClInclude Include="Libraries\Virtualizer\C\VirtualizerSDK_BorlandC_inline.h" />
+    <ClInclude Include="Libraries\Virtualizer\C\VirtualizerSDK_CustomVMs.h" />
+    <ClInclude Include="Libraries\Virtualizer\C\VirtualizerSDK_CustomVMs_BorlandC_inline.h" />
+    <ClInclude Include="Libraries\Virtualizer\C\VirtualizerSDK_CustomVMs_GNU_inline.h" />
+    <ClInclude Include="Libraries\Virtualizer\C\VirtualizerSDK_CustomVMs_ICL_inline.h" />
+    <ClInclude Include="Libraries\Virtualizer\C\VirtualizerSDK_CustomVMs_LCC_inline.h" />
+    <ClInclude Include="Libraries\Virtualizer\C\VirtualizerSDK_CustomVMs_VC_inline.h" />
+    <ClInclude Include="Libraries\Virtualizer\C\VirtualizerSDK_GNU_inline.h" />
+    <ClInclude Include="Libraries\Virtualizer\C\VirtualizerSDK_ICL_inline.h" />
+    <ClInclude Include="Libraries\Virtualizer\C\VirtualizerSDK_LCC_inline.h" />
+    <ClInclude Include="Libraries\Virtualizer\C\VirtualizerSDK_VC_inline.h" />
+    <ClInclude Include="Loader\Exports.h" />
+    <ClInclude Include="Loader\Security\Security.hpp" />
+    <ClInclude Include="Loader\Socket\base64.hpp" />
+    <ClInclude Include="Menu\Framework\ColorPicker\ColorPicker.h" />
+    <ClInclude Include="Menu\Framework\Hotkey\Hotkey.h" />
+    <ClInclude Include="Renderer\Textures\checkmark.h" />
+    <ClInclude Include="Renderer\Textures\indicators.h" />
+    <ClInclude Include="Renderer\Textures\weaponicons.h" />
+    <ClInclude Include="SDK\Classes\CCSGameRules.hpp" />
+    <ClInclude Include="SDK\Classes\CFontManager.hpp" />
+    <ClInclude Include="SDK\Classes\IInputSystem.hpp" />
+    <ClInclude Include="SDK\Classes\IWeaponSystem.hpp" />
+    <ClInclude Include="SDK\sdk.hpp" />
+    <ClInclude Include="SDK\Utils\auto.hpp" />
+    <ClInclude Include="Features\Rage\Autowall.hpp" />
+    <ClInclude Include="SDK\Valve\bitvec.h" />
+    <ClInclude Include="SDK\Valve\CBaseHandle.hpp" />
+    <ClInclude Include="SDK\Classes\CClientState.hpp" />
+    <ClInclude Include="SDK\Valve\characterset.hpp" />
+    <ClInclude Include="SDK\color.hpp" />
+    <ClInclude Include="Utils\Config.hpp" />
+    <ClInclude Include="SDK\core.hpp" />
+    <ClInclude Include="SDK\Classes\CPlayerResource.hpp" />
+    <ClInclude Include="Utils\CrashHandler.hpp" />
+    <ClInclude Include="SDK\Classes\CStudioRender.hpp" />
+    <ClInclude Include="SDK\Classes\CUserCmd.hpp" />
+    <ClInclude Include="SDK\variables.hpp" />
+    <ClInclude Include="SDK\Classes\DataMap.hpp" />
+    <ClInclude Include="SDK\Definitions.hpp" />
+    <ClInclude Include="Utils\extern\defs.hpp" />
+    <ClInclude Include="SDK\Displacement.hpp" />
+    <ClInclude Include="SDK\Classes\entity.hpp" />
+    <ClInclude Include="Features\Visuals\EventLogger.hpp" />
+    <ClInclude Include="SDK\Classes\Exploits.hpp" />
+    <ClInclude Include="Utils\extern\FnvHash.hpp" />
+    <ClInclude Include="Libraries\freetype\freetype\config\ftconfig.h" />
+    <ClInclude Include="Libraries\freetype\freetype\config\ftheader.h" />
+    <ClInclude Include="Libraries\freetype\freetype\config\ftmodule.h" />
+    <ClInclude Include="Libraries\freetype\freetype\config\ftoption.h" />
+    <ClInclude Include="Libraries\freetype\freetype\config\ftstdlib.h" />
+    <ClInclude Include="Libraries\freetype\freetype\freetype.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftadvanc.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftbbox.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftbdf.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftbitmap.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftbzip2.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftcache.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftchapters.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftcid.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftdriver.h" />
+    <ClInclude Include="Libraries\freetype\freetype\fterrdef.h" />
+    <ClInclude Include="Libraries\freetype\freetype\fterrors.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftfntfmt.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftgasp.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftglyph.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftgxval.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftgzip.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftimage.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftincrem.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftlcdfil.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftlist.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftlzw.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftmac.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftmm.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftmodapi.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftmoderr.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftotval.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftoutln.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftparams.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftpfr.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftrender.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftsizes.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftsnames.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftstroke.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftsynth.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftsystem.h" />
+    <ClInclude Include="Libraries\freetype\freetype\fttrigon.h" />
+    <ClInclude Include="Libraries\freetype\freetype\fttypes.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ftwinfnt.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\autohint.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\cffotypes.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\cfftypes.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\ftcalc.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\ftdebug.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\ftdrv.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\ftgloadr.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\fthash.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\ftmemory.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\ftobjs.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\ftpic.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\ftpsprop.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\ftrfork.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\ftserv.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\ftstream.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\fttrace.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\ftvalid.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\internal.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\psaux.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\pshints.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svbdf.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svcfftl.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svcid.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svfntfmt.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svgldict.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svgxval.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svkern.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svmetric.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svmm.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svotval.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svpfr.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svpostnm.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svprop.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svpscmap.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svpsinfo.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svsfnt.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svttcmap.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svtteng.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svttglyf.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\services\svwinfnt.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\sfnt.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\t1types.h" />
+    <ClInclude Include="Libraries\freetype\freetype\internal\tttypes.h" />
+    <ClInclude Include="Libraries\freetype\freetype\t1tables.h" />
+    <ClInclude Include="Libraries\freetype\freetype\ttnameid.h" />
+    <ClInclude Include="Libraries\freetype\freetype\tttables.h" />
+    <ClInclude Include="Libraries\freetype\freetype\tttags.h" />
+    <ClInclude Include="Libraries\freetype\ft2build.h" />
+    <ClInclude Include="Features\Miscellaneous\GameEvent.hpp" />
+    <ClInclude Include="SDK\Classes\GlowOutlineEffect.hpp" />
+    <ClInclude Include="Hooking\Hooked.hpp" />
+    <ClInclude Include="Hooking\Hooker.hpp" />
+    <ClInclude Include="SDK\Includes.hpp" />
+    <ClInclude Include="SDK\Classes\IAppSystem.hpp" />
+    <ClInclude Include="SDK\Classes\IBaseClientDll.hpp" />
+    <ClInclude Include="SDK\Classes\ICenterPrint.hpp" />
+    <ClInclude Include="SDK\Classes\IClientEntity.hpp" />
+    <ClInclude Include="SDK\Classes\IClientEntityList.hpp" />
+    <ClInclude Include="SDK\Classes\IClientLeafSystem.hpp" />
+    <ClInclude Include="SDK\Classes\IConVar.hpp" />
+    <ClInclude Include="SDK\Classes\IEngineSound.hpp" />
+    <ClInclude Include="SDK\Classes\IEngineTrace.hpp" />
+    <ClInclude Include="SDK\Classes\IGameEventManager.hpp" />
+    <ClInclude Include="SDK\Classes\IGameMovement.hpp" />
+    <ClInclude Include="SDK\Classes\IInput.hpp" />
+    <ClInclude Include="SDK\Classes\ILocalize.hpp" />
+    <ClInclude Include="SDK\Classes\IMaterialSystem.hpp" />
+    <ClInclude Include="SDK\Classes\IMemAlloc.hpp" />
+    <ClInclude Include="SDK\Classes\IMoveHelper.hpp" />
+    <ClInclude Include="SDK\Classes\INetChannel.hpp" />
+    <ClInclude Include="SDK\Classes\INetMessage.hpp" />
+    <ClInclude Include="Utils\InputSys.hpp" />
+    <ClInclude Include="SDK\Classes\IPanel.hpp" />
+    <ClInclude Include="SDK\Classes\IPhysics.hpp" />
+    <ClInclude Include="SDK\Classes\IPrediction.hpp" />
+    <ClInclude Include="SDK\Classes\ISteamClient.hpp" />
+    <ClInclude Include="SDK\Classes\IStudioRender.hpp" />
+    <ClInclude Include="SDK\Classes\ISurface.hpp" />
+    <ClInclude Include="SDK\Classes\IVDebugOverlay.hpp" />
+    <ClInclude Include="SDK\Classes\IVEngineClient.hpp" />
+    <ClInclude Include="SDK\Classes\IViewRender.hpp" />
+    <ClInclude Include="SDK\Classes\IViewRenderBeams.hpp" />
+    <ClInclude Include="SDK\Classes\IVModelInfo.hpp" />
+    <ClInclude Include="SDK\Classes\IVModelRender.hpp" />
+    <ClInclude Include="SDK\Classes\IVRenderView.hpp" />
+    <ClInclude Include="Libraries\json.h" />
+    <ClInclude Include="Features\Miscellaneous\KitParser.hpp" />
+    <ClInclude Include="Utils\extern\lazy_importer.hpp" />
+    <ClInclude Include="Utils\LogSystem.hpp" />
+    <ClInclude Include="Utils\Math.hpp" />
+    <ClInclude Include="SDK\Valve\Matrix.hpp" />
+    <ClInclude Include="Menu\Elements.h" />
+    <ClInclude Include="Menu\Framework\Button\Button.h" />
+    <ClInclude Include="Menu\Framework\Checkbox\Checkbox.h" />
+    <ClInclude Include="Menu\Framework\Dropdown\Dropdown.h" />
+    <ClInclude Include="Menu\Framework\Form\Form.h" />
+    <ClInclude Include="Menu\Framework\Group\Group.h" />
+    <ClInclude Include="Menu\Framework\GUI.h" />
+    <ClInclude Include="Menu\Framework\Label\Label.h" />
+    <ClInclude Include="Menu\Framework\Listbox\Listbox.h" />
+    <ClInclude Include="Menu\Framework\MultiDropdown\MultiDropdown.h" />
+    <ClInclude Include="Menu\Framework\Slider\Slider.h" />
+    <ClInclude Include="Menu\Framework\Textbox\Textbox.h" />
+    <ClInclude Include="Menu\Helpers\Easing.h" />
+    <ClInclude Include="Menu\Helpers\InputHelper.h" />
+    <ClInclude Include="Libraries\minhook-master\include\MinHook.h" />
+    <ClInclude Include="Libraries\minhook-master\src\buffer.h" />
+    <ClInclude Include="Libraries\minhook-master\src\hde\hde32.h" />
+    <ClInclude Include="Libraries\minhook-master\src\hde\hde64.h" />
+    <ClInclude Include="Libraries\minhook-master\src\hde\pstdint.h" />
+    <ClInclude Include="Libraries\minhook-master\src\hde\table32.h" />
+    <ClInclude Include="Libraries\minhook-master\src\hde\table64.h" />
+    <ClInclude Include="Libraries\minhook-master\src\trampoline.h" />
+    <ClInclude Include="SDK\Valve\platform.hpp" />
+    <ClInclude Include="SDK\Classes\Player.hpp" />
+    <ClInclude Include="SDK\Classes\PlayerAnimState.hpp" />
+    <ClInclude Include="Features\Rage\EnginePrediction.hpp" />
+    <ClInclude Include="SDK\Classes\PropManager.hpp" />
+    <ClInclude Include="SDK\Valve\qangle.hpp" />
+    <ClInclude Include="SDK\Utils\PatternScan.hpp" />
+    <ClInclude Include="Features\Rage\Ragebot.hpp" />
+    <ClInclude Include="SDK\Valve\recv_swap.hpp" />
+    <ClInclude Include="Renderer\Render.hpp" />
+    <ClInclude Include="Features\Rage\Resolver.hpp" />
+    <ClInclude Include="SDK\Utils\Print.hpp" />
+    <ClInclude Include="Features\Miscellaneous\SkinChanger.hpp" />
+    <ClInclude Include="Utils\Threading\packed_heap.h" />
+    <ClInclude Include="Utils\extern\syscall.hpp" />
+    <ClInclude Include="Features\Rage\TickbaseShift.hpp" />
+    <ClInclude Include="Utils\Threading\atomic_lock.h" />
+    <ClInclude Include="Utils\base64.h" />
+    <ClInclude Include="Utils\Threading\mutex.h" />
+    <ClInclude Include="Utils\Threading\semaphores.h" />
+    <ClInclude Include="Utils\Threading\shared_mutex.h" />
+    <ClInclude Include="Utils\Threading\threading.h" />
+    <ClInclude Include="SDK\Valve\UtlBuffer.hpp" />
+    <ClInclude Include="SDK\Valve\UtlMap.hpp" />
+    <ClInclude Include="SDK\Valve\UtlMemory.hpp" />
+    <ClInclude Include="SDK\Valve\UtlVector.hpp" />
+    <ClInclude Include="SDK\Utils\vcall.hpp" />
+    <ClInclude Include="SDK\Valve\vector.hpp" />
+    <ClInclude Include="SDK\Valve\vector2d.hpp" />
+    <ClInclude Include="SDK\Valve\vector4d.hpp" />
+    <ClInclude Include="SDK\Utils\os.hpp" />
+    <ClInclude Include="pandora.hpp" />
+    <ClInclude Include="SDK\Classes\weapon.hpp" />
+    <ClInclude Include="SDK\Classes\WeaponInfo.hpp" />
+    <ClInclude Include="Utils\extern\XorStr.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Libraries\minhook-master\dll_resources\MinHook.def" />
+    <None Include="Libraries\Virtualizer\C\Via ASM module\VirtualizerSDKCustomVmMacros.asm" />
+    <None Include="Libraries\Virtualizer\C\Via ASM module\VirtualizerSDKMacros.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Libraries\minhook-master\dll_resources\MinHook.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
