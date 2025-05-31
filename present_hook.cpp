@@ -4,6 +4,8 @@
 #include "imgui/backends/imgui_impl_win32.h"
 #include "imgui/backends/imgui_impl_dx11.h"
 #include "menu.hpp"  // for render_hvh_tab() and menu_open
+#include "present_hook.hpp"
+
 
 // Define global toggle flag
 bool menu_open = false;
@@ -43,3 +45,12 @@ void RenderMenu() {
     ImGui::Render();
     ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
 }
+#include "present_hook.hpp"
+
+// Hook implementation for render presentation
+void HookedPresent() {
+    // Call to the original Present function
+    // Insert overlay/rendering code here
+}'
+#include "present_hook.hpp"
+

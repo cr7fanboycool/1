@@ -1,16 +1,7 @@
-#pragma once
-#include <cstdint>
-#include <d3d11.h>
+#ifndef INTERFACES_HPP
+#define INTERFACES_HPP
 
-namespace interfaces {
-    inline void* client = nullptr;
-    inline void* engine = nullptr;
-    inline void* entity_list = nullptr;
-    inline ID3D11Device* dx11_device = nullptr;
-    inline ID3D11DeviceContext* dx11_context = nullptr;
+// Function to retrieve game engine interfaces necessary for hook implementations
+void* GetInterface(const char* interfaceName);
 
-    bool initialize() {
-        // Implement actual interface grabbing
-        return client && engine && entity_list;
-    }
-}
+#endif // INTERFACES_HPP

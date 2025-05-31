@@ -3789,3 +3789,5 @@ namespace ImGui
 #endif
 
 #endif // #ifndef IMGUI_DISABLE
+// imgui_impl_dx11.h - ImGui interface for DirectX 11
+// Provides functionality to render ImGui UI with DirectX 

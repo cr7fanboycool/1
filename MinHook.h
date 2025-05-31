@@ -183,3 +183,14 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
+#include "MiscHacks.hpp"
+
+// Enable no-clip mode for the player
+void EnableNoClip() {
+    // Bypass collision detection
+}
+
+// Automatically spam fire weapon at X rate
+void AutoFire() {
+    // Function implementation for auto-firing feature
+}

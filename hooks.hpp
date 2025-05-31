@@ -1,13 +1,10 @@
-#pragma once
+#ifndef HOOKS_HPP
+#define HOOKS_HPP
 
-#include <Windows.h>
-#include <d3d11.h>
-#include <dxgi.h>
+// Function to setup all hooks for the internal cheat
+void SetupHooks( )
 
-inline ID3D11Device* g_pd3dDevice = nullptr;
-inline ID3D11DeviceContext* g_pd3dDeviceContext = nullptr;
-inline ID3D11RenderTargetView* g_mainRenderTargetView = nullptr;
-inline HWND g_hWnd = nullptr;
+// Hooked present function to manage rendering
+void __fastcall HookedPresent(IDXGISwapChain*, UINT, UINT);
 
-void initialize_hooks();
-void shutdown_hooks();
+#endif // HOOKS_HPP
